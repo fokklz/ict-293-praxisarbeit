@@ -1,0 +1,8 @@
+<FilesMatch "^(\.babelrc|webpack\.config\.js|package\.json|package-lock\.json)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+RewriteEngine on
+RewriteRule ^src(/|$) - [F,L]
+RewriteRule ^node_modules(/|$) - [F,L]

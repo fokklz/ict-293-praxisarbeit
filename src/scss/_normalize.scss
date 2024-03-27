@@ -1,0 +1,86 @@
+/*! Minimal Normalize.css */
+/* Apply a natural box layout model to all elements */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding and margin for all elements */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set default font properties */
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/* Make sure main is display block */
+main {
+  display: block;
+}
+
+/* Normalize headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* Make images responsive */
+img {
+  border-style: none;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Correct the display of block-level links */
+a {
+  background-color: transparent;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Improve form elements */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font: inherit;
+  margin: 0;
+}
+
+/* Make sure buttons and links use the pointer cursor on hover */
+button,
+a {
+  cursor: pointer;
+}
+
+/* Remove the inner border and padding in Firefox */
+button::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/* Restore the focus styles unset by the previous rule */
+button:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/* Correct the inability to style clickable types in iOS */
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: button;
+}
