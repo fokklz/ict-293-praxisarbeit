@@ -1,0 +1,116 @@
+#ratings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  height: 65vh;
+  position: relative;
+  background-image: url('../img/home-ratings.webp');
+  background-size: cover;
+  background-position: center;
+
+  > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: -150%;
+    width: 250%;
+    height: 100%;
+
+    @include media-max(xs) {
+      left: -180%;
+      width: 300%;
+      height: 130%;
+      top: -30%;
+    }
+    background: linear-gradient(
+      160deg,
+      transparent 0%,
+      transparent 30%,
+      rgba(255, 255, 255, 1) 30%,
+      rgba(255, 255, 255, 0.98) 50%,
+      rgba(255, 255, 255, 0.9) 70%,
+      rgba(255, 255, 255, 0.8) 80%,
+      rgba(125, 185, 232, 0) 100%
+    );
+
+    pointer-events: none; // This line is to make sure the overlay doesn't interfere with any interactions with the element.
+  }
+
+  .rating {
+    display: flex;
+    overflow-x: hidden;
+
+    .ratings-inner {
+      display: flex;
+      flex-wrap: nowrap;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .rating-item {
+      display: flex;
+      flex-direction: column;
+      padding: 0.7rem 0;
+
+      h5 {
+        margin: 0.5rem 0;
+      }
+
+      p {
+        hyphens: auto;
+        word-wrap: break-word;
+      }
+
+      .stars {
+        display: flex;
+        justify-content: flex-end;
+
+        svg {
+          height: 20px;
+          width: 20px;
+
+          &.filled {
+            fill: #f1c40f;
+          }
+        }
+      }
+    }
+  }
+
+  .rating-dots {
+    display: flex;
+    flex-direction: row;
+    user-select: none;
+    flex-wrap: wrap;
+
+    .dot {
+      display: inline-block;
+      height: 16px;
+      width: 16px;
+      margin: 0.5rem 0.4rem;
+      border: 3px solid #717171;
+      border-radius: 50%;
+      cursor: pointer;
+
+      &.active,
+      &:hover {
+        background-color: #717171;
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

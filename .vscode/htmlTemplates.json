@@ -3,48 +3,48 @@
         {
             "path": "src\\templates\\head.template.html",
             "targets": [
-                "src\\index.html",
-                "src\\locations.html",
-                "src\\prices.html",
                 "src\\contact-us.html",
                 "src\\house-regulations.html",
                 "src\\imprint.html",
-                "src\\register-now.html"
-            ]
-        },
-        {
-            "path": "src\\templates\\scripts.template.html",
-            "targets": [
                 "src\\index.html",
                 "src\\locations.html",
-                "src\\prices.html",
-                "src\\contact-us.html",
-                "src\\house-regulations.html",
-                "src\\imprint.html",
+                "src\\pricing.html",
                 "src\\register-now.html"
             ]
         },
         {
             "path": "src\\templates\\header.template.html",
             "targets": [
-                "src\\index.html",
-                "src\\locations.html",
-                "src\\prices.html",
                 "src\\contact-us.html",
                 "src\\house-regulations.html",
                 "src\\imprint.html",
+                "src\\index.html",
+                "src\\locations.html",
+                "src\\pricing.html",
                 "src\\register-now.html"
             ]
         },
         {
             "path": "src\\templates\\footer.template.html",
             "targets": [
-                "src\\index.html",
-                "src\\locations.html",
-                "src\\prices.html",
                 "src\\contact-us.html",
                 "src\\house-regulations.html",
                 "src\\imprint.html",
+                "src\\index.html",
+                "src\\locations.html",
+                "src\\pricing.html",
+                "src\\register-now.html"
+            ]
+        },
+        {
+            "path": "src\\templates\\scripts.template.html",
+            "targets": [
+                "src\\contact-us.html",
+                "src\\house-regulations.html",
+                "src\\imprint.html",
+                "src\\index.html",
+                "src\\locations.html",
+                "src\\pricing.html",
                 "src\\register-now.html"
             ]
         }

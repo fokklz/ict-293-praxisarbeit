@@ -1,0 +1,77 @@
+// Define a base font size and line height
+$base-font-size: 16px;
+$base-line-height: 1.5;
+
+// Define font sizes for headings and text
+// These values are based on Material Design's type scale
+$font-sizes: (
+  display4: 3.5rem,
+  display3: 2.8125rem,
+  display2: 2.125rem,
+  display1: 1.5rem,
+  headline: 1.5rem,
+  title: 1.25rem,
+  subheading: 1rem,
+  body2: 0.875rem,
+  body1: 0.875rem,
+  caption: 0.75rem,
+  button: 0.875rem,
+);
+
+// Define line heights for better readability
+$line-heights: (
+  display4: 1.1,
+  display3: 1.1,
+  display2: 1.1,
+  display1: 1.1,
+  headline: 1.2,
+  title: 1.2,
+  subheading: 1.5,
+  body2: 1.4,
+  body1: 1.5,
+  caption: 1.2,
+  button: 1,
+);
+
+// Mixin for applying font styles
+@mixin apply-font-style($style) {
+  font-size: map-get($font-sizes, $style);
+  line-height: map-get($line-heights, $style);
+}
+
+// Apply styles to standard tags
+h1 {
+  @include apply-font-style(display4);
+}
+h2 {
+  @include apply-font-style(display3);
+}
+h3 {
+  @include apply-font-style(display2);
+}
+h4 {
+  @include apply-font-style(display1);
+}
+h5 {
+  @include apply-font-style(headline);
+}
+h6 {
+  @include apply-font-style(title);
+}
+p,
+body {
+  @include apply-font-style(body1);
+}
+.subtitle1 {
+  @include apply-font-style(subheading);
+}
+.subtitle2 {
+  @include apply-font-style(body2);
+}
+.caption {
+  @include apply-font-style(caption);
+}
+.button {
+  @include apply-font-style(button);
+  text-transform: uppercase;
+}

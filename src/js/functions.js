@@ -12,3 +12,15 @@
 export function registerListener(selector, event, fn) {
   document.querySelector(selector).addEventListener(event, fn);
 }
+
+export function debounce(func, delay) {
+  let timeoutId;
+  return (...args) => {
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
+    timeoutId = setTimeout(() => {
+      func.apply(null, args);
+    }, delay);
+  };
+}

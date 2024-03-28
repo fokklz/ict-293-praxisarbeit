@@ -1,5 +1,17 @@
 import '../scss/index.scss';
 import { registerListener } from './functions';
+import { setupRatings } from './ratings';
+
+export function setActive(className) {
+  document.querySelectorAll('.nav-link.active').forEach((link) => {
+    link.classList.remove('active');
+  });
+  document.querySelectorAll(`.nav-link.${className}`).forEach((link) => {
+    link.classList.add('active');
+  });
+}
+window.setActive = setActive;
+window.setupRatings = setupRatings;
 
 function updateMobileNavHeight() {
   const mobileNav = document.getElementById('mobile-nav');

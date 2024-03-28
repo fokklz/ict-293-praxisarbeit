@@ -1,6 +1,7 @@
 // Your grid breakpoints
 $grid-breakpoints: (
-  xs: 0,
+  xxs: 0,
+  xs: 375px,
   sm: 576px,
   md: 768px,
   lg: 992px,
@@ -48,7 +49,7 @@ $grid-breakpoints: (
 
   @each $breakpoint, $container-max-width in $breakpoints {
     @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
-      @if $breakpoint != 'xs' {
+      @if $breakpoint != 'xxs' {
         // Exclude setting max-width for the first breakpoint (0)
         max-width: $container-max-width;
       }
@@ -93,5 +94,31 @@ $grid-breakpoints: (
     }
   } @else {
     @warn "The breakpoint '#{$breakpoint}' is not defined.";
+  }
+}
+
+@mixin media-max($breakpoint, $grid-breakpoints: $grid-breakpoints) {
+  $max-width: map-get($grid-breakpoints, $breakpoint);
+
+  @if $max-width {
+    @media (max-width: $max-width) {
+      @content;
+    }
+  } @else {
+    @warn "No value found for breakpoint `#{$breakpoint}`. "
+            "This will result in no media query being generated.";
+  }
+}
+
+@mixin media-min($breakpoint, $grid-breakpoints: $grid-breakpoints) {
+  $min-width: map-get($grid-breakpoints, $breakpoint);
+
+  @if $min-width {
+    @media (min-width: $min-width) {
+      @content;
+    }
+  } @else {
+    @warn "No value found for breakpoint `#{$breakpoint}`. "
+            "This will result in no media query being generated.";
   }
 }
