@@ -2,7 +2,7 @@
 <html lang="de">
   <head>
     <title>Home | Fitness Factory</title>
-    <!-- TEMPLATE_START: templates\head.html -->
+    <!-- TEMPLATE_START: src\templates\head.template.html -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -10,10 +10,10 @@
 
     <link rel="stylesheet" href="./assets/css/style.css" />
 
-    <!-- TEMPLATE_END: templates\head.html -->
+    <!-- TEMPLATE_END: src\templates\head.template.html -->
   </head>
   <body>
-    <!-- TEMPLATE_START: templates\header.html -->
+    <!-- TEMPLATE_START: src\templates\header.template.html -->
     <header>
       <nav class="expanded">
         <div class="container">
@@ -31,9 +31,9 @@
             </div>
           </div>
           <span class="link-wrapper">
-            <a href="./index.html">Home</a>
-            <a href="./prices.html">Preise</a>
-            <a href="./locations.html">Standorte</a>
+            <a class="nav-link home" href="./index.html">Home</a>
+            <a class="nav-link pricing" href="./pricing.html">Preise</a>
+            <a class="nav-link locations" href="./locations.html">Standorte</a>
             <a href="./register-now.html" class="call-to-action"
               >Jetzt Anmelden</a
             >
@@ -42,31 +42,151 @@
       </nav>
     </header>
     <div id="mobile-nav">
-      <a href="./index.html">Home</a>
-      <a href="./prices.html">Preise</a>
-      <a href="./locations.html">Standorte</a>
+      <a class="nav-link home" href="./index.html">Home</a>
+      <a class="nav-link pricing" href="./pricing.html">Preise</a>
+      <a class="nav-link locations" href="./locations.html">Standorte</a>
       <a href="./register-now.html" class="call-to-action">Jetzt Anmelden</a>
       <span class="fill-space"></span>
-      <a href="./imprint.html">Impressum</a>
-      <a href="./house-regulations.html">Hausordnung</a>
+      <a class="nav-link imprint" href="./imprint.html">Impressum</a>
+      <a class="nav-link house-regulations" href="./house-regulations.html"
+        >Hausordnung</a
+      >
     </div>
 
-    <!-- TEMPLATE_END: templates\header.html -->
-
+    <!-- TEMPLATE_END: src\templates\header.template.html -->
     <img
       class="hero-image"
-      src="./assets/img/home-hero-image.jpg"
+      src="./assets/img/home-hero.webp"
       alt="Fitness Factory Home Hero"
     />
 
-    <!-- TEMPLATE_START: templates\footer.html -->
+    <section class="main-section" id="philosophy">
+      <div class="container">
+        <h1>Unsere Philosophie</h1>
+        <p>
+          Bei FitnessFactory geht es nicht nur darum, körperliche Grenzen zu
+          überschreiten; es geht um eine Lebensveränderung. Unsere Philosophie
+          basiert auf drei Säulen: Gesundheit, Gemeinschaft und Wachstum. Wir
+          glauben, dass Fitness eine Reise ist, die sowohl den Körper als auch
+          den Geist transformiert. Unsere Mission ist es, eine unterstützende
+          und inspirierende Umgebung zu schaffen, in der jeder Einzelne dazu
+          befähigt wird, seine Gesundheits- und Wellnessziele zu erreichen.
+          FitnessFactory ist mehr als ein Ort zum Trainieren; es ist ein Ort, wo
+          Fortschritt gefeiert, Herausforderungen angenommen und Grenzen
+          erweitert werden. Unsere Gemeinschaft steht im Mittelpunkt unseres
+          Handelns, und durch sie inspirieren wir uns gegenseitig, jeden Tag ein
+          bisschen besser zu werden.
+        </p>
+      </div>
+    </section>
+
+    <section id="ratings">
+      <div class="container">
+        <h2>Was unsere Kunden sagen</h2>
+        <div class="rating-wrapper">
+          <div class="rating"></div>
+          <div class="rating-dots"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEMPLATE_START: src\templates\footer.template.html -->
     <footer></footer>
 
-    <!-- TEMPLATE_END: templates\footer.html -->
-
-    <!-- TEMPLATE_START: templates\scripts.html -->
+    <!-- TEMPLATE_END: src\templates\footer.template.html -->
+    <!-- TEMPLATE_START: src\templates\scripts.template.html -->
     <script src="./assets/js/main.js" type="text/javascript"></script>
 
-    <!-- TEMPLATE_END: templates\scripts.html -->
+    <!-- TEMPLATE_END: src\templates\scripts.template.html -->
+
+    <script>
+      setActive('home');
+      setupRatings([
+        {
+          name: 'John Doe',
+          rating: 5,
+          comment:
+            'Ich liebe Fitness Factory! Die Trainer sind unglaublich und die Gemeinschaft ist so unterstützend.',
+        },
+        {
+          name: 'Jane Doe',
+          rating: 4,
+          comment:
+            'Tolles Fitnessstudio mit viel Equipment. Die Kurse sind spaßig und die Trainer sind sehr hilfsbereit.',
+        },
+        {
+          name: 'Max Mustermann',
+          rating: 5,
+          comment:
+            'Ich bin seit über einem Jahr Mitglied und bin sehr zufrieden mit meinem Fortschritt. Die Trainer sind sehr kompetent und die Gemeinschaft ist sehr unterstützend.',
+        },
+        {
+          name: 'Erika Mustermann',
+          rating: 4,
+          comment:
+            'Ich bin seit ein paar Monaten Mitglied und bin sehr zufrieden mit meinem Fortschritt. Die Trainer sind sehr kompetent und die Gemeinschaft ist sehr unterstützend.',
+        },
+        {
+          name: 'Hans Schmidt',
+          rating: 5,
+          comment:
+            'Ich bin seit ein paar Wochen Mitglied und bin sehr zufrieden mit meinem Fortschritt. Die Trainer sind sehr kompetent und die Gemeinschaft ist sehr unterstützend.',
+        },
+        {
+          name: 'Anna Schmidt',
+          rating: 4,
+          comment:
+            'Ich bin seit ein paar Tagen Mitglied und bin sehr zufrieden mit meinem Fortschritt. Die Trainer sind sehr kompetent und die Gemeinschaft ist sehr unterstützend.',
+        },
+        {
+          name: 'Markus Müller',
+          rating: 4,
+          comment:
+            'Ich bin seit einigen Monaten Mitglied und fühle mich hier sehr wohl. Das Training ist effektiv und die Atmosphäre ist super.',
+        },
+        {
+          name: 'Sarah Schmidt',
+          rating: 4,
+          comment:
+            'Fitness Factory ist ein großartiges Fitnessstudio. Die Trainer sind motivierend und die Einrichtungen sind top.',
+        },
+        {
+          name: 'Laura Wagner',
+          rating: 5,
+          comment:
+            'Ich bin begeistert von Fitness Factory! Die Kurse sind abwechslungsreich und das Personal ist sehr freundlich.',
+        },
+        {
+          name: 'Michaela Weber',
+          rating: 5,
+          comment:
+            'Fitness Factory ist mein zweites Zuhause. Die Trainer sind super und die Atmosphäre ist toll.',
+        },
+        {
+          name: 'Johannes Braun',
+          rating: 4,
+          comment:
+            'Ich liebe die Kurse hier. Sie sind sehr herausfordernd und machen Spaß.',
+        },
+        {
+          name: 'Julia Fischer',
+          rating: 5,
+          comment:
+            'Die Trainer hier sind sehr professionell und freundlich. Ich fühle mich immer willkommen.',
+        },
+        {
+          name: 'Stefan Schneider',
+          rating: 4,
+          comment:
+            'Die Einrichtungen sind sauber und gut gepflegt. Ich genieße mein Training hier.',
+        },
+        {
+          name: 'Anna Meyer',
+          rating: 5,
+          comment:
+            'Fitness Factory ist das beste Fitnessstudio, in dem ich je war. Ich kann es nur empfehlen.',
+        },
+      ]);
+    </script>
   </body>
 </html>
