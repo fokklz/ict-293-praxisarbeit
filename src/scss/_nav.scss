@@ -56,7 +56,11 @@ nav {
 
     & > a {
       padding: 0 0.9rem;
-      transition: padding 0.3s ease-in-out;
+      transition: padding 0.3s, color 0.3s ease-in-out;
+
+      &:hover {
+        color: var(--color-primary);
+      }
 
       &.active {
         color: var(--color-primary-text);
@@ -153,6 +157,11 @@ nav {
     text-align: center;
     padding: 0.8rem 1rem;
     font-size: 1.34rem;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+      color: var(--color-primary);
+    }
 
     &.active {
       color: var(--color-primary-text);

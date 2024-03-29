@@ -9,7 +9,10 @@
                 "src\\index.html",
                 "src\\locations.html",
                 "src\\pricing.html",
-                "src\\register-now.html"
+                "src\\register-now.html",
+                "src\\to-be-created.html",
+                "src\\terms-and-conditions.html",
+                "src\\privacy-policy.html"
             ]
         },
         {
@@ -21,7 +24,10 @@
                 "src\\index.html",
                 "src\\locations.html",
                 "src\\pricing.html",
-                "src\\register-now.html"
+                "src\\register-now.html",
+                "src\\to-be-created.html",
+                "src\\terms-and-conditions.html",
+                "src\\privacy-policy.html"
             ]
         },
         {
@@ -33,7 +39,10 @@
                 "src\\index.html",
                 "src\\locations.html",
                 "src\\pricing.html",
-                "src\\register-now.html"
+                "src\\register-now.html",
+                "src\\to-be-created.html",
+                "src\\terms-and-conditions.html",
+                "src\\privacy-policy.html"
             ]
         },
         {
@@ -45,7 +54,10 @@
                 "src\\index.html",
                 "src\\locations.html",
                 "src\\pricing.html",
-                "src\\register-now.html"
+                "src\\register-now.html",
+                "src\\to-be-created.html",
+                "src\\terms-and-conditions.html",
+                "src\\privacy-policy.html"
             ]
         }
     ]

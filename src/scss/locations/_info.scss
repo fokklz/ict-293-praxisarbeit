@@ -1,0 +1,61 @@
+#locations {
+  .location {
+    display: flex;
+    flex-direction: row;
+    padding-top: 1rem;
+
+    .mobile-nav {
+      @include show-until(md);
+      flex-direction: row;
+      padding-bottom: 1rem;
+    }
+
+    .col {
+      position: relative;
+      padding-right: 1rem;
+      min-width: 200px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        right: 0;
+        width: 1.8px;
+        background-color: #333;
+        height: 100%;
+        opacity: 0.4;
+      }
+
+      .list {
+        display: flex;
+        flex-direction: column;
+
+        a {
+          padding: 0.2rem 0.3rem;
+        }
+      }
+    }
+
+    .location-info {
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 auto;
+      padding: 0 1.5rem;
+
+      .bottom-spacing {
+        margin-bottom: 1.3rem;
+      }
+    }
+
+    @include media-max(md) {
+      flex-direction: column;
+
+      .col {
+        display: none;
+      }
+      .location-info {
+        padding: 0;
+      }
+    }
+  }
+}

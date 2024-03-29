@@ -1,0 +1,37 @@
+#newsletter {
+  form {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-gap: 1rem;
+    padding-top: 0.5rem;
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      grid-column: 1;
+
+      label {
+        margin-bottom: 0.5rem;
+      }
+
+      input {
+        width: 100%;
+        padding: 0.2rem 0.4rem;
+      }
+    }
+
+    .buttons {
+      display: flex;
+      grid-column: 2;
+      align-items: stretch;
+
+      button {
+        padding: 0 1rem;
+        background-color: var(--color-primary);
+        border: 1px solid var(--color-primary-text);
+        color: var(--color-primary-foreground);
+        margin-top: 0.5rem;
+      }
+    }
+  }
+}

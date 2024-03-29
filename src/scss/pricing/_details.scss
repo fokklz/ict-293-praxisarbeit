@@ -1,0 +1,131 @@
+#detail {
+  h2 {
+    margin-bottom: 1rem;
+  }
+
+  .wide-screen {
+    @include hide-until(md, flex);
+
+    .table {
+      width: 100%;
+
+      thead {
+        th {
+          font-weight: 500;
+          padding-bottom: 0.7rem;
+        }
+      }
+
+      tbody {
+        tr {
+          td {
+            padding: 0.5rem 0;
+            img {
+              width: 20px;
+              height: 20px;
+            }
+
+            &:nth-child(1) {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+
+              .icon + * {
+                padding-left: 0.5rem;
+              }
+            }
+
+            &:nth-child(2),
+            &:nth-child(3),
+            &:nth-child(4) {
+              width: 15%;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .mobile-screen {
+    @include show-until(md, flex);
+
+    .list {
+      display: flex;
+      flex-direction: column;
+      padding: 0.7rem 0;
+      flex: 1 1 auto;
+
+      .list-item {
+        padding: 0.4rem;
+        padding-bottom: 0.6rem;
+
+        &:nth-child(odd) {
+          background-color: #f9f9f9;
+        }
+
+        .list-item-header {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          .icon {
+            width: 20px;
+            height: 20px;
+          }
+
+          h5 {
+            margin-left: 0.4rem;
+          }
+        }
+        .list-item-content {
+          display: flex;
+          flex-direction: row;
+          margin: 0.2rem 0.4rem;
+
+          .tag {
+            padding: 0.4rem 0.6rem;
+            position: relative;
+            padding-left: 2rem;
+            margin: 0 0.4rem;
+            border-radius: 10px;
+
+            &:first-child {
+              margin-left: 0;
+            }
+
+            &:last-child {
+              margin-right: 0;
+            }
+
+            &::before {
+              content: '';
+              position: absolute;
+              left: 0.7rem;
+              top: 50%;
+              transform: translateY(-50%);
+              width: 15px;
+              height: 15px;
+              background-repeat: no-repeat;
+              opacity: 0.5;
+            }
+
+            &.check {
+              background-color: #b6d7a8;
+              &::before {
+                background-image: url('../img/icons/check-solid.svg');
+              }
+            }
+
+            &.not-covered {
+              background-color: #ea9999;
+              &::before {
+                background-image: url('../img/icons/xmark-solid.svg');
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

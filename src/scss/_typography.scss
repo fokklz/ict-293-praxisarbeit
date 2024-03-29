@@ -17,6 +17,19 @@ $font-sizes: (
   caption: 0.75rem,
   button: 0.875rem,
 );
+$font-sizes-small: (
+  display4: 2rem,
+  display3: 1.75rem,
+  display2: 1.5rem,
+  display1: 1.25rem,
+  headline: 1.25rem,
+  title: 1rem,
+  subheading: 0.875rem,
+  body2: 0.75rem,
+  body1: 0.75rem,
+  caption: 0.625rem,
+  button: 0.75rem,
+);
 
 // Define line heights for better readability
 $line-heights: (
@@ -34,44 +47,84 @@ $line-heights: (
 );
 
 // Mixin for applying font styles
-@mixin apply-font-style($style) {
+@mixin apply-font-style($style, $font-sizes: $font-sizes) {
   font-size: map-get($font-sizes, $style);
   line-height: map-get($line-heights, $style);
 }
 
 // Apply styles to standard tags
-h1 {
+h1,
+.h1 {
   @include apply-font-style(display4);
+  @include media-max(md) {
+    @include apply-font-style(display4, $font-sizes-small);
+  }
 }
-h2 {
+h2,
+.h2 {
   @include apply-font-style(display3);
+  @include media-max(md) {
+    @include apply-font-style(display3, $font-sizes-small);
+  }
 }
-h3 {
+h3,
+.h3 {
   @include apply-font-style(display2);
+  @include media-max(md) {
+    @include apply-font-style(display2, $font-sizes-small);
+  }
 }
-h4 {
+h4,
+.h4 {
   @include apply-font-style(display1);
+  @include media-max(md) {
+    @include apply-font-style(display1, $font-sizes-small);
+  }
 }
-h5 {
+h5,
+.h5 {
   @include apply-font-style(headline);
+  @include media-max(md) {
+    @include apply-font-style(headline, $font-sizes-small);
+  }
 }
-h6 {
+h6,
+.h6 {
   @include apply-font-style(title);
+  @include media-max(md) {
+    @include apply-font-style(title, $font-sizes-small);
+  }
 }
 p,
+.p,
 body {
   @include apply-font-style(body1);
+  @include media-max(md) {
+    @include apply-font-style(body1, $font-sizes-small);
+  }
 }
 .subtitle1 {
   @include apply-font-style(subheading);
+  @include media-max(md) {
+    @include apply-font-style(subheading, $font-sizes-small);
+  }
 }
 .subtitle2 {
   @include apply-font-style(body2);
+  @include media-max(md) {
+    @include apply-font-style(body2, $font-sizes-small);
+  }
 }
 .caption {
   @include apply-font-style(caption);
+  @include media-max(md) {
+    @include apply-font-style(caption, $font-sizes-small);
+  }
 }
 .button {
   @include apply-font-style(button);
+  @include media-max(md) {
+    @include apply-font-style(button, $font-sizes-small);
+  }
   text-transform: uppercase;
 }
