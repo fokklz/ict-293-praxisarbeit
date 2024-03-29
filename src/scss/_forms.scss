@@ -1,0 +1,78 @@
+form {
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+
+    &.disclaimer {
+      margin: 1rem 0;
+    }
+
+    .message {
+      padding: 0.2rem;
+      padding-top: 0.4rem;
+      color: #333;
+      font-weight: 500;
+    }
+
+    label {
+      margin-bottom: 0.2rem;
+    }
+
+    input,
+    textarea,
+    select {
+      padding: 0.25rem;
+      border: 1px solid #667;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+  }
+
+  .sub-form-wrapper {
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.5s ease-in-out;
+    height: auto;
+
+    [data-for] {
+      height: 0;
+      overflow: hidden;
+      transform: scaleY(0.9);
+      transition: transform 0.3s ease-in-out;
+
+      &.selected {
+        margin-top: 1rem;
+        height: auto;
+        transform: scaleY(1);
+      }
+    }
+
+    .sub-form {
+      .form-group {
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    button {
+      padding: 0.2rem 0.5rem;
+      border: 1px solid #667;
+      color: #333;
+      background-color: #fff;
+
+      &.call-to-action {
+        background-color: var(--color-primary);
+        color: var(--color-primary-foreground);
+        border: 1px solid var(--color-primary-text);
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
-const locations = [
+export const locations = [
   {
     name: 'Basel (Dreispitz)',
     addressStreet: 'Leimgrubenweg 4',
@@ -68,9 +68,14 @@ function setActiveLocation(
   if (active) {
     active.classList.remove('active');
   }
-  const location =
-    new URLSearchParams(window.location.search).get('location') ||
-    locations[0].name;
+  let location = new URLSearchParams(window.location.search).get('location');
+  let skipScroll = false;
+
+  if (!location || location == '') {
+    location = locations[0].name;
+    skipScroll = true;
+  }
+
   const item = document.querySelector(
     selector + ` a[href="./locations.html?location=${location}"]`
   );
@@ -78,11 +83,13 @@ function setActiveLocation(
 
   if (move) {
     setDisplayLocationInfo(locations.find((loc) => loc.name === location));
-    item.scrollIntoView({
-      behavior: 'smooth',
-      inline: 'center',
-      block: 'center',
-    });
+    if (!skipScroll) {
+      item.scrollIntoView({
+        behavior: 'smooth',
+        inline: 'center',
+        block: 'center',
+      });
+    }
   }
 }
 
@@ -108,9 +115,16 @@ export function setupDisplayLocation(
     });
     target.appendChild(item);
 
+    let targetLocation =
+      new URLSearchParams(window.location.search).get('location') ||
+      locations[0].name;
+
     const dropdownOption = document.createElement('option');
     dropdownOption.value = location.name;
     dropdownOption.textContent = location.name;
+    if (location.name === targetLocation) {
+      dropdownOption.selected = true;
+    }
     dropdown.appendChild(dropdownOption);
   });
 

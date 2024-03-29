@@ -7,6 +7,7 @@ import {
   createMobilePricingList,
 } from './pricing';
 import { setDisplayLocationInfo, setupDisplayLocation } from './location';
+import { setupForms } from './forms';
 
 export function setActive(className) {
   document.querySelectorAll('.nav-link.active').forEach((link) => {
@@ -50,4 +51,6 @@ document.addEventListener('DOMContentLoaded', function () {
       window.location.href = fakeHref.getAttribute('data-href');
     });
   });
+
+  setupForms();
 });

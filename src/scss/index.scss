@@ -22,7 +22,7 @@ body {
 body {
   display: flex;
   flex-direction: column;
-  font-family: 'Verdana', 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: #f5f5f5;
   color: #333;
   margin: 0;
@@ -106,6 +106,7 @@ a.default {
 
 @import 'nav';
 @import 'footer';
+@import 'forms';
 
 @import 'home/ratings';
 @import 'home/newsletter';
