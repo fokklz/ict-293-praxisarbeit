@@ -5,10 +5,9 @@ const CopyPlugin = require('copy-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const CSSMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
-const jsEntries = glob.sync('./src/js/!(_)*.js').reduce((acc, path) => {
-  const entry = path.replace('./src/js/', '').replace('.js', '');
-  let splitted = entry.split('\\');
-  acc[splitted[splitted.length - 1]] = './' + path;
+const jsEntries = glob.sync('./src/js/!(_)*.js').reduce((acc, filePath) => {
+  const entryName = path.basename(filePath, '.js');
+  acc[entryName] = filePath;
   return acc;
 }, {});
 
@@ -16,7 +15,7 @@ module.exports = {
   entry: jsEntries,
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'assets/js/[name].js',
+    filename: './assets/js/[name].js',
   },
   module: {
     rules: [
@@ -48,7 +47,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'assets/css/style.css',
+      filename: './assets/css/style.css',
     }),
     new CopyPlugin({
       patterns: [
