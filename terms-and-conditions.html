@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="de">
   <head>
-    <title>Comming Soon | Fitness Factory</title>
+    <title>Allgemeine Geschäftsbedingungen | Fitness Factory</title>
     <!-- TEMPLATE_START: src\templates\head.template.html -->
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<link rel="icon" href="./assets/img/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="./assets/img/favicon.ico" type="image/x-icon" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
-  rel="stylesheet"
-/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
 
-<link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
 
-<!-- TEMPLATE_END: src\templates\head.template.html -->
+    <!-- TEMPLATE_END: src\templates\head.template.html -->
   </head>
-  <body>
+  <body class="no-hero">
     <!-- TEMPLATE_START: src\templates\header.template.html -->
     <header>
       <nav class="expanded">
@@ -44,6 +44,29 @@
             <a href="./register-now.html" class="call-to-action"
               >Jetzt Anmelden</a
             >
+            <div class="dropdown">
+              <a class="dropdown-trigger"
+                ><img
+                  src="./assets/img/icons/scale-balanced-solid.svg"
+                  alt="Lawful Content Icon"
+              /></a>
+              <div class="dropdown-content">
+                <a class="nav-link imprint" href="./imprint.html">Impressum</a>
+                <a
+                  class="nav-link house-regulations"
+                  href="./house-regulations.html"
+                  >Hausordnung</a
+                >
+                <a class="nav-link privacy-policy" href="./privacy-policy.html"
+                  >Datenschutzerklärung</a
+                >
+                <a
+                  class="nav-link terms-and-conditions"
+                  href="./terms-and-conditions.html"
+                  >AGB</a
+                >
+              </div>
+            </div>
           </span>
         </div>
       </nav>
@@ -375,5 +398,8 @@
     <script src="./assets/js/main.js" type="text/javascript"></script>
 
     <!-- TEMPLATE_END: src\templates\scripts.template.html -->
+    <script>
+      setActive('terms-and-conditions');
+    </script>
   </body>
 </html>
