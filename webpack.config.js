@@ -7,7 +7,7 @@ const CSSMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 const jsEntries = glob.sync('./src/js/!(_)*.js').reduce((acc, filePath) => {
   const entryName = path.basename(filePath, '.js');
-  acc[entryName] = filePath;
+  acc[entryName] = `./${filePath}`;
   return acc;
 }, {});
 
