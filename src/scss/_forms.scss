@@ -1,8 +1,26 @@
 form {
+  &[name='newsletter'] {
+    .form-group {
+      margin-bottom: 0 !important;
+
+      &.invalid {
+        + .buttons {
+          margin-bottom: 30.5px;
+        }
+      }
+    }
+  }
+
   .form-group {
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
+
+    &.no-mark {
+      .required {
+        opacity: 0;
+      }
+    }
 
     &.disclaimer {
       margin: 1rem 0;
@@ -17,6 +35,11 @@ form {
 
     label {
       margin-bottom: 0.2rem;
+
+      .required {
+        padding-left: 0.1rem;
+        color: red;
+      }
     }
 
     input,

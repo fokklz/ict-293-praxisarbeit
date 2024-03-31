@@ -3,23 +3,23 @@
   <head>
     <title>Jetzt Anmelden | Fitness Factory</title>
     <!-- TEMPLATE_START: src\templates\head.template.html -->
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<link rel="icon" href="./assets/img/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="./assets/img/favicon.ico" type="image/x-icon" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
-  rel="stylesheet"
-/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
 
-<link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
 
-<!-- TEMPLATE_END: src\templates\head.template.html -->
+    <!-- TEMPLATE_END: src\templates\head.template.html -->
   </head>
-  <body>
+  <body class="no-hero">
     <!-- TEMPLATE_START: src\templates\header.template.html -->
     <header>
       <nav class="expanded">
@@ -39,24 +39,55 @@
           </div>
           <span class="link-wrapper">
             <a class="nav-link home" href="./index.html">Home</a>
-            <a class="nav-link pricing" href="./prices.html">Preise</a>
+            <a class="nav-link pricing" href="./pricing.html">Preise</a>
             <a class="nav-link locations" href="./locations.html">Standorte</a>
             <a href="./register-now.html" class="call-to-action"
               >Jetzt Anmelden</a
             >
+            <div class="dropdown">
+              <a class="dropdown-trigger"
+                ><img
+                  src="./assets/img/icons/scale-balanced-solid.svg"
+                  alt="Lawful Content Icon"
+              /></a>
+              <div class="dropdown-content">
+                <a class="nav-link imprint" href="./imprint.html">Impressum</a>
+                <a
+                  class="nav-link house-regulations"
+                  href="./house-regulations.html"
+                  >Hausordnung</a
+                >
+                <a class="nav-link privacy-policy" href="./privacy-policy.html"
+                  >Datenschutzerklärung</a
+                >
+                <a
+                  class="nav-link terms-and-conditions"
+                  href="./terms-and-conditions.html"
+                  >AGB</a
+                >
+              </div>
+            </div>
           </span>
         </div>
       </nav>
     </header>
     <div id="mobile-nav">
       <a class="nav-link home" href="./index.html">Home</a>
-      <a class="nav-link pricing" href="./prices.html">Preise</a>
+      <a class="nav-link pricing" href="./pricing.html">Preise</a>
       <a class="nav-link locations" href="./locations.html">Standorte</a>
       <a href="./register-now.html" class="call-to-action">Jetzt Anmelden</a>
       <span class="fill-space"></span>
       <a class="nav-link imprint" href="./imprint.html">Impressum</a>
       <a class="nav-link house-regulations" href="./house-regulations.html"
         >Hausordnung</a
+      >
+      <a class="nav-link privacy-policy" href="./privacy-policy.html"
+        >Datenschutzerklärung</a
+      >
+      <a
+        class="nav-link terms-and-conditions"
+        href="./terms-and-conditions.html"
+        >AGB</a
       >
     </div>
 
@@ -65,7 +96,7 @@
     <section class="main-section" id="register-now">
       <div class="container">
         <h1>Melde dich für eine Mitgliedschaft an</h1>
-        <form>
+        <form name="booking">
           <div class="form-group">
             <label for="first-name">Vorname</label>
             <input
@@ -102,7 +133,7 @@
               type="tel"
               id="phone"
               name="phone"
-              placeholder="0123456789"
+              placeholder="+41 79 123 45 67"
               required
             />
           </div>
@@ -142,7 +173,7 @@
           </div>
           <div class="form-group sub-form-wrapper">
             <label for="payment-method">Zahlungsmethode</label>
-            <select id="payment-method" name="payment-method">
+            <select id="payment-method" name="payment-method" required>
               <option value="">Bitte auswählen</option>
               <option value="credit-card">Kreditkarte</option>
               <option value="paypal">PayPal</option>
@@ -204,7 +235,7 @@
             <label for="plan">Mitgliedschaft</label>
             <select id="plan" name="plan" required>
               <option value="">Bitte auswählen</option>
-              <option value="basic">Basic</option>
+              <option value="budget">Budget</option>
               <option value="premium">Premium</option>
               <option value="luxury">VIP</option>
             </select>

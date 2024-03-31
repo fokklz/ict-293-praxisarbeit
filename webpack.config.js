@@ -1,12 +1,22 @@
 const path = require('path');
+const glob = require('glob');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const CSSMinimizerPlugin = require('css-minimizer-webpack-plugin');
+
+const jsEntries = glob.sync('./src/js/!(_)*.js').reduce((acc, path) => {
+  const entry = path.replace('./src/js/', '').replace('.js', '');
+  let splitted = entry.split('\\');
+  acc[splitted[splitted.length - 1]] = './' + path;
+  return acc;
+}, {});
 
 module.exports = {
-  entry: './src/js/index.js',
+  entry: jsEntries,
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'assets/js/main.js',
+    filename: 'assets/js/[name].js',
   },
   module: {
     rules: [
@@ -21,7 +31,7 @@ module.exports = {
         },
       },
       {
-        test: /\.(scss|css)$/,
+        test: /^(?!.*\/_).*\.scss$/,
         use: [
           MiniCssExtractPlugin.loader,
           {
@@ -30,6 +40,7 @@ module.exports = {
               url: false,
             },
           },
+          'postcss-loader',
           'sass-loader',
         ],
       },
@@ -37,7 +48,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'assets/css/style.css', // Output CSS file name
+      filename: 'assets/css/style.css',
     }),
     new CopyPlugin({
       patterns: [
@@ -51,4 +62,13 @@ module.exports = {
       ],
     }),
   ],
+  optimization: {
+    minimizer: [new TerserPlugin(), new CSSMinimizerPlugin()],
+  },
+  performance: {
+    assetFilter: function (assetFilename) {
+      // Ignore asset size warnings for files in assets/img
+      return !assetFilename.startsWith('assets/img/');
+    },
+  },
 };

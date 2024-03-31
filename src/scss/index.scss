@@ -97,10 +97,47 @@ section {
 a.default {
   color: var(--color-primary-text);
 
-  &:hover {
+  &:hover,
+  &.active {
     color: var(--color-primary);
     text-decoration: underline;
     text-decoration-color: var(--color-primary);
+  }
+}
+
+.dropdown {
+  position: relative;
+  padding: 0.5rem;
+
+  &:hover {
+    .dropdown-content {
+      display: block;
+    }
+  }
+
+  &-trigger {
+    img {
+      width: 21px;
+      height: 21px;
+      opacity: 0.5;
+    }
+  }
+
+  &-content {
+    position: absolute;
+    top: 90%;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 0.2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: none;
+    z-index: 1000;
+
+    > a {
+      display: block;
+      padding: 0.5rem;
+    }
   }
 }
 
